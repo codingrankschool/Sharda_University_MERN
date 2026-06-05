@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List Element Example</title>
+</head>
+<body>
+
+    <!-- List Element:
+    In Html we have three type of list to present the plain in the list format
+    
+    1. Ordered list
+    2. Un-ordered list
+    3. Description List
+    -->
+
+    <!-- OrderList 1
+    ol element 
+
+    Note: ordered and unorderd list having set of list items
+    -->
+
+    <ol>
+        <li>Home</li>
+        <li>Courses</li>
+        <li>About</li>
+    </ol>
+
+    <!-- Ordered List Attribute to change and enahance behavior -->
+
+    <hr>
+
+    <!-- type: decides type of list you want show
+    value - default(1)
+    other values:
+    a
+    A
+    i
+    I 
+    -->
+
+    <ol type="a">
+        <li>Home</li>
+        <li>Courses</li>
+        <li>About</li>
+    </ol>
+
+    
+    <ol type="A">
+        <li>Home</li>
+        <li>Courses</li>
+        <li>About</li>
+    </ol>
+
+    <ol type="i">
+        <li>Home</li>
+        <li>Courses</li>
+        <li>About</li>
+    </ol>
+
+     <ol type="I">
+        <li>Home</li>
+        <li>Courses</li>
+        <li>About</li>
+    </ol>
+
+    <!-- start attribute:
+    Note: it is used in ordered list only.
+    which decide from where we want start order
+    default value = its inital value 
+    -->
+
+    <ol type="1" start="100">
+        <li>Home</li>
+        <li>Courses</li>
+        <li>About</li>
+    </ol>
+
+    <ol type="1" reversed>
+        <li>Home</li>
+        <li>Courses</li>
+        <li>About</li>
+    </ol>
+
+    <ol type="I" reversed start="10">
+        <li>Home</li>
+        <li>Courses</li>
+        <li>About</li>
+    </ol>
+
+
+    <!-- Un-ordered list
+    It doesn't follow any order and represented by some shapes 
+    -->
+
+    <ul>
+
+        <li>Buy Groceries</li>
+        <li>Complete Assignment</li>
+        <li>Call Your Mom</li>
+    </ul>
+
+    <hr>
+
+    <ul type="square">
+
+        <li>Buy Groceries</li>
+        <li>Complete Assignment</li>
+        <li>Call Your Mom</li>
+    </ul>
+
+    <ul type="circle">
+
+        <li>Buy Groceries</li>
+        <li>Complete Assignment</li>
+        <li>Call Your Mom</li>
+    </ul>
+
+    <!-- Nested List Examples -->
+
+    <!-- Nested List -->
+
+
+    <ol>
+        <li>Home</li>
+        <li>Courses</li>
+        <ol>
+            <li>Python</li>
+            <li>Java
+                <ol type="i">
+                    <li>Full Stack Java</li>
+                    <li>Backend Java</li>
+                </ol>
+
+            </li>
+            <li>Javscript</li>
+        </ol>
+        <li>About</li>
+        <li>Assignment
+            <ul>
+                <li>Science Assignment</li>
+                <li>Coding Assignment
+                    <ul>
+                        <li>Java Assignment</li>
+                        <li>HTML Assignment</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ol>
+
+    <!-- Description List -->
+
+    <dl>
+        <dt>What is Noun?</dt>
+        <dd>Noun is naming word</dd>
+    </dl>
+
+
+
+
+
+    
+</body>
+</html>
