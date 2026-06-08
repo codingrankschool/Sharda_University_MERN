@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Combinator</title>
+
+    <style>
+
+       /* Descendant Selector */
+        #container p{
+            color: red;
+        }
+
+        /* Child Selector */
+
+        #container>p{
+            background-color: yellow;
+            color: red;
+        }
+
+        /* General Sibling */
+        /* #container>div~div{
+            background-color: blue;
+        } */
+
+        #container>div>p~p{
+            background-color: green;
+        }
+
+    </style>
+
+
+  </head>
+  <body>
+    <!-- Why Combinator -->
+
+    <!-- 
+    #container>div>p~p{
+            background-color: green;
+        }
+    -->
+
+    <div id="container">
+        <div>
+            <p>Para 1</p>
+            <p>Para 2</p>
+            <p>Para 3</p>
+            <h1>Hello Heading</h1>
+            <p>Hello Para</p>
+        </div>
+
+        <p>I'm Para 10</p>
+        <p>I'm Para 11</p>
+        <h1>I'm heading one </h1>
+
+        <div>
+            <div>
+            <h2>Heading 2</h2>
+            </div>
+
+            <div>
+                <p>Para 1</p>
+                <p>Para 2</p>
+                <p>Para 3</p>
+                <div>
+                    <p>Para 1</p>
+                    <p>Para 2</p>
+                    <p>Para 3</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p>I'm special Paragraph</p>
+
+  </body>
+</html>

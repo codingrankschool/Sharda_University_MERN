@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Element</title>
+
+    <style>
+        p::after{
+            content: " Rakesh!";
+        }
+
+        p::before{
+            content: "Hey! ";
+        }
+
+        /* #special::first-letter{
+            font-size: 100px;
+            color: red;
+        } */
+
+        /* #special::first-line{
+            color: blue;
+        } */
+
+        /* #special::selection{
+            background-color: blue;
+            color: white;
+        } */
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <p>Hello</p>
+
+    <br>
+
+    <p id="special">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea repudiandae possimus quisquam consequuntur officia in voluptatibus iusto, aliquam aliquid quibusdam, dolor quod! Perspiciatis laborum optio iusto neque animi quibusdam recusandae?</p>
+    
+</body>
+</html>

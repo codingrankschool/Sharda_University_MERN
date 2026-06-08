@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Property: justify-content property</title>
+
+
+    <!-- flex-direction
+    - Align elements/childs row or column wise, by main-axis or cross axis, horizontanly or vertically
+
+    default: row
+    
+    other values:
+    
+    column
+    column-reverse
+    row-reverse
+    -->
+
+    <style>
+
+        #container{
+            border: 1px solid red;
+            padding: 10px;
+            height: 500px;
+            display: flex;
+            flex-direction: column-reverse;
+
+        }
+
+        #container>div{
+            border: 1px solid teal;
+            padding: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Flex Parent Property:
+     - They are being used in the parent container
+     1. Justify-content - this
+     2. flex-direction
+     4. flex-wrap
+     5. align-item
+     6. align-content
+    -->
+
+    <div id="container">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+    </div>
+    
+</body>
+</html>

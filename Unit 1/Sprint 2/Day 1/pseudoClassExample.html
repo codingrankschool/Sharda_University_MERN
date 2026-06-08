@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo Classes</title>
+
+    <style>
+      /* #container>div:first-child, #container>div:last-child{
+            background-color: red;
+        } */
+
+      /* #container>div:nth-child(1){
+            background-color: red;
+        }
+
+        #container>div:nth-child(3){
+            background-color: red;
+        } */
+
+      /* #container>div:nth-child(2n){
+            background-color: red;
+        } */
+
+      /* #container>div:nth-child(odd){
+            background-color: red;
+        }
+
+         #container>div:nth-child(even){
+            background-color: teal;
+        } */
+
+        p:not(.para){
+            background-color: teal;
+        }
+
+        input:focus{
+            outline-color: red;
+        }
+
+        #mybox{
+            background-color: tomato;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+
+        #mybox:hover{
+            transform: scale(2);
+            transition: all 2s;
+        }
+
+        
+
+
+    </style>
+  </head>
+  <body>
+    <!-- Pseudo Classes: They provide/change tempory state of html element.
+    
+    selector:pseudo-class
+
+    :hover
+    :nth-child
+    :active
+    :focus
+    
+    -->
+
+    <div id="container">
+      <div>Box 1</div>
+      <div>Box 2</div>
+      <div>Box 3</div>
+      <div>Box 4</div>
+      <div>Box 5</div>
+    </div>
+
+    <p>Para 1</p>
+    <p>Para 2</p>
+    <p class="para">Para 3</p>
+    <p>Para 4</p>
+    <p>Para 5</p>
+
+    <input type="text" placeholder="Enter Name">
+
+
+    <div id="mybox"></div>
+
+
+  </body>
+</html>

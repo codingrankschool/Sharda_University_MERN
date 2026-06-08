@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Id And Class Selector</title>
+
+    <style>
+
+        #csk_team{
+            border: 1px solid red;
+            padding: 10px;
+            background-color: red;
+        }
+
+        .csk-player{
+            background-color: yellow;
+            color: black;
+            margin: 5px;
+            padding: 10px;
+        }
+
+        #rcb-team{
+            border: 1px solid;
+            background-color: black;
+            padding: 10px;
+        }
+
+        .rcb-player{
+            background-color: blue;
+            margin: 5px;
+            padding: 10px;
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+    <!-- 
+    ID: Uniqueness - if we want to give style to particular element in html doucment we can use id here.
+    
+    #id, #id-name
+
+    Class: Sharing the style - when we want similar type for more than one element we can use class selector.
+    -->
+
+    <!-- .class_name, .class, .class-name -->
+
+
+    <div id="csk_team">
+        <div class="csk-player">Player 1</div>
+        <div class="csk-player">Player 2</div>
+        <div class="csk-player">Player 3</div>
+        <div class="csk-player">Player 4</div>
+        <div class="csk-player">Player 5</div>
+    </div>
+
+    <hr>
+
+    <div id="rcb-team">
+        <div class="rcb-player">Player 1</div>
+        <div class="rcb-player">Player 2</div>
+        <div class="rcb-player">Player 3</div>
+        <div class="rcb-player">Player 4</div>
+        <div class="rcb-player">Player 5</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector Priority</title>
+     
+    <style>
+
+        *{
+            background-color: cyan;
+            margin: 0;
+        }
+
+        #special div{
+            margin: 60px;
+        }
+
+        .para{
+            margin: 50px;
+        }
+
+
+        p{
+            margin: 20px
+        }
+
+        p{
+            margin:30px
+        }
+
+        
+
+        
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <!-- Selector Priority -->
+
+
+    <p style="margin: 0;" id="special" class="para">Para 1</p>
+    <p class="para">Para 2</p>
+    <p>Para 3</p>
+
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <div>Div 3</div>
+
+
+    <!-- 
+    Inline: 1000
+    Id: 100
+    class: 10
+    tag/type: 1
+    universal: 0
+    -->
+    
+</body>
+</html>

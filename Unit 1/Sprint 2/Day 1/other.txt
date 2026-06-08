@@ -1,0 +1,10 @@
+
+TO Use Font Owesome Icon use below link in head Tag:
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+----------------------------
+
+To Use Google Icons use below link in head tag:
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selector</title>
+
+    <style>
+
+        a[href="www.google.com"]{
+            color: red;
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        input[type="text"]{
+            background-color: yellow;
+        }
+
+        input{
+            outline-color: green;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <a href="www.google.com">google</a>
+    <br>
+    <a href="#">Normal Link</a>
+    <br>
+
+    <hr>
+
+    <input type="text" placeholder="text"><br>
+    <input type="search" placeholder="search"><br>
+    <input type="button" value="button"><br>
+    <input type="text" placeholder="text">
+    
+</body>
+</html>
