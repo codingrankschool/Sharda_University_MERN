@@ -1,0 +1,6 @@
+Kindly create the layout shown in the attached image inside the same folder
+
+Note:
+
+-You may use any dummy images for the layout.
+-It is not necessary to use the exact same images as shown in the reference.

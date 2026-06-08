@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Example using flex parent property</title>
+
+    <style>
+
+        #nav{
+            border: 1px solid red;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            border-radius: 20px;
+        }
+
+        #nav>div:last-child{
+            width: 15%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #links{
+            display: flex;
+            width: 50%;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #links>a{
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        img{
+            width: 50px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="nav">
+        <img src="https://codingrankschool.com/_next/image?url=%2Fbranding%2Flogo.png&w=384&q=75" alt="Logo">
+
+        <div id="links">
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">About</a>
+            <a href="#">Placements</a>
+        </div>
+
+        <div>
+            <button>Login</button>
+            <button>Sign Up</button>
+        </div>
+
+    </div>
+    
+</body>
+</html>
