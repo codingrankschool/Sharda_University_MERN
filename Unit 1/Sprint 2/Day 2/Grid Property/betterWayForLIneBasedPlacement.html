@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Line Based Placement</title>
+
+    <style>
+
+        #container{
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 150px 150px 150px;
+            grid-template-rows: 150px 150px;
+            gap: 10px;
+            justify-content: center;
+
+            grid-template-areas: 
+            "rd tl bl"
+            "yl tl aq"
+            ;
+
+
+        }
+
+        #container>div:nth-child(1){
+            background-color: red;
+            grid-area: rd;
+            
+        }
+
+        #container>div:nth-child(2){
+            background-color: teal;
+            grid-area: tl;
+            
+        }
+
+        #container>div:nth-child(3){
+            background-color: blue;
+            grid-area: bl;
+            
+        }
+
+        #container>div:nth-child(4){
+            background-color: yellow;
+            grid-area: yl;
+            
+        }
+
+        #container>div:nth-child(5){
+            background-color: brown;
+            grid-area: bw;
+            
+        }
+
+        #container>div:nth-child(6){
+            background-color: aqua;
+            grid-area: aq;
+            
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </div>
+    
+</body>
+</html>

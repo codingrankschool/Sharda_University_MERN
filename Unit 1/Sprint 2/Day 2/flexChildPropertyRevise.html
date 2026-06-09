@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Child Property</title>
+
+    <style>
+
+        #container{
+            border: 1px solid;
+            padding: 5px;
+            display: flex;
+
+        }
+
+        #container>div{
+            border: 1px solid red;
+            width: 60px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* child property */
+            /* flex-grow */
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            /* order: 0; */
+            /* flex-basis: ; */
+
+        }
+
+        #container>div:nth-child(1){
+            /* flex-grow: 3; */
+
+            /* flex-shrink: 2; */
+            
+        }
+
+        #container>div:nth-child(2){
+
+            /* flex-grow: 2; */
+            /* order: -3; */
+            flex-basis: 100px;
+            
+            
+        }
+
+        #container>div:nth-child(3){
+            /* flex-shrink: 4; */
+            /* order: -1; */
+            
+        }
+
+        #container>div:nth-child(4){
+            
+        }
+        
+
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Child Property -->
+
+    <div id="container">
+        
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        
+    </div>
+
+    
+</body>
+</html>

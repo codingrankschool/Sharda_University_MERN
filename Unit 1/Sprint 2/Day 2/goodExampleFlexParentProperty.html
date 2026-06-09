@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Example - Parent Property</title>
+
+    <style>
+
+        #nav{
+            padding: 10px;
+            border: 1px solid;
+            display: flex;
+            justify-content: space-between;
+            background-color: teal;
+        }
+        #logo{
+
+        }
+
+        #links{
+            width: 40%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #links>a{
+            text-decoration: none;
+            cursor: pointer;
+            color: white;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        #photos{
+            padding: 10px;
+        }
+
+        .box{
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .box>div{
+            border: 1px solid teal;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+    </style>
+
+  </head>
+  <body>
+
+    <!-- navbar  -->
+    <div id="nav">
+        <img id="logo" src="" alt="Logo" />
+        <div id="links">
+            <a href="">Home</a>
+            <a href="">Gallery</a>
+            <a href="">About</a>
+        </div>
+    </div>
+
+    <!-- main box -->
+
+    <h2>Photo Gallery</h2>
+
+    <div id="photos">
+        <div class="box">
+
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+        <div class="box">
+
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+    </div>
+
+  </body>
+</html>

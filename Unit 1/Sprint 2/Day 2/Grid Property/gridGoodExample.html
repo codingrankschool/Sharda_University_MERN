@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Example using line based placement</title>
+
+    <style>
+
+        #container{
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 150px);
+            grid-template-rows: 50px repeat(2, 150px) 200px;
+            justify-content: center;
+
+            grid-template-areas: 
+            "nav nav nav nav"
+            "main main main sidebar"
+            "main main main sidebar"
+            "footer footer footer footer"
+            ;
+
+
+        }
+
+        #container>div:nth-child(1){
+            background-color: red;
+            grid-area: nav;
+            
+        }
+
+        #container>div:nth-child(2){
+            background-color: teal;
+            grid-area: main;
+            
+        }
+
+        #container>div:nth-child(3){
+            background-color: blue;
+            grid-area: sidebar;
+            
+        }
+
+        #container>div:nth-child(4){
+            background-color: yellow;
+            grid-area: footer;
+            
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+
+        <div>Navbar</div>
+        <div>Main</div>
+        <div>Sidebar</div>
+        <div>footer</div>
+
+    </div>
+    
+</body>
+</html>

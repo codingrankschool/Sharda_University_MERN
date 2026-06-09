@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Classes Example</title>
+
+    <style>
+
+        #box{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+
+        #box:hover{
+            /* background-color: yellow; */
+            /* transform: scale(1.05);
+            transition: all 1s; */
+        }
+
+        button{
+            display: block;
+            margin: 5px;
+        }
+
+        button:active{
+            background-color: red;
+        }
+
+        input{
+            margin: 5px;
+        }
+
+        input:focus{
+            outline-color: red;
+        }
+
+        #container{
+            border: 1px solid;
+            padding: 10px;
+        }
+
+        #container>div{
+            border: 1px solid green;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        /* #container>div:first-child, #container>div:last-child{
+            background-color: green;
+            color: white;
+        } */
+
+        /* #container>div:nth-child(2){
+            background-color: red;
+            color: white;
+        } */
+
+        /*  
+    <div id="container">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+        <div>Box 5</div>
+    </div> */
+
+
+        /* #container>div:nth-child(even){
+            background-color: green;
+            color: white;
+        } */
+
+        /* #container>div:nth-child(odd){
+            background-color: green;
+            color: white;
+        } */
+
+        /* #container>div:nth-child(3n){
+            background-color: green;
+            color: white;
+        } */
+
+        p:not(.special){
+            background-color: green;
+            padding: 10px;
+            color: white;
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Pseduo Classes:
+    They provide/give temporary state to html element, or can give parmanent state as well.
+    denoted by selector:pseudoclassname 
+    :hover
+    :active
+    :focus
+    :nth-class
+    :other
+    -->
+
+    <div id="box">
+    </div>
+
+    <button>Click</button>
+
+    <input type="text" placeholder="Enter Name">
+
+    <hr>
+
+    <!-- parmanent state -->
+
+    <div id="container">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+        <div>Box 5</div>
+    </div>
+
+    <hr>
+
+    <p>Para 1</p>
+    <p>Para 2</p>
+    <p class="special">Para 3</p>
+    <p>Para 4</p>
+    <p>Para 5</p>
+    
+</body>
+</html>

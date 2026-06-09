@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #container1{
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #container1>div{
+            width: 200px;
+            height: 200px;
+        }
+
+        #container1>div:first-child{
+            background-color: orange;
+        }
+
+        #container1>div:nth-child(2){
+            background-color: pink;
+        }
+
+        #container1>div:last-child{
+            background-color: tomato;
+        }
+
+
+
+         #container2{
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        #container2>div:first-child{
+            background-color: teal;
+        }
+
+        #container2>div:nth-child(2){
+            background-color: yellow;
+        }
+
+        #container2>div:last-child{
+            background-color: blue;
+        }
+
+        #container2>div{
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="container1">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+     <div id="container2">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    
+</body>
+</html>

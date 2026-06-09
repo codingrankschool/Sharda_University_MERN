@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Element Example</title>
+
+    <style>
+
+        #special::before{
+            content: "Hello ";
+        }
+
+        #special::after{
+            content: "Rakesh!";
+        }
+
+        #special~p::selection{
+            background-color: black;
+            color: white;
+        }
+
+        /* #special~p::first-letter{
+            font-size: 30px;
+            color: tomato;
+        } */
+
+        #special~p::first-line{
+            background-color: red;
+            
+        }
+        
+
+
+    </style>
+
+</head>
+<body>
+
+    <!-- Pseudo Element:
+    - Fake state for html element content.
+    denoted by ::pseudoElementName
+    ::first-line
+    ::first-letter
+    ::before
+    ::after
+    ::selection 
+    -->
+
+    <p id="special"></p>
+    <hr>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam commodi eos reiciendis ipsa sed cumque reprehenderit, molestias beatae illo numquam id fugit expedita nobis quo! Dolorum alias sapiente atque dignissimos.</p>
+
+    
+</body>
+</html>
