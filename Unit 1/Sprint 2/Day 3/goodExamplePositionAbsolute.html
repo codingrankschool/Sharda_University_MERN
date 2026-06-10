@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Example - Position Absolute</title>
+
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar{
+            border: 1px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        #cart{
+            width: 50px;
+            height: 50px;
+            font-size: 30px;
+            position: relative;
+        }
+
+        #cart>div{
+            width: 20px;
+            height: 20px;
+            font-size: 18px;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+
+            position: absolute;
+            right: 10px;
+            top: 0;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+
+   <nav id="navbar">
+
+        <img src="" alt="Logo">
+
+        <div id="link">
+            <a href="">Home</a>
+            <a href="">Courses</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+
+        <div id="cart">
+        🛒
+        <div>3</div>
+    </div>
+
+   </nav>
+    
+</body>
+</html>
