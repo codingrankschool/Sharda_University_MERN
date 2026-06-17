@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+
+    <h1 id="heading">Hello Everyone</h1>
+    <button onclick="alert('Somebody clicked')">Click</button>
+    
+</body>
+</html>
+
+<!-- 
+Javascript doesnt know about html
+Html doesn't know about javascript
+
+
+- When html file loads on browser it internally converts entire html to a document object.
+
+And javascript doesn't above document using this document object javacript communites to the html and interaction happens
+
+-->
+
+<script>
+    console.log(document)
+    console.log(document.title)
+
+    document.getElementById("heading").textContent = "Hello From JS"
+</script>
