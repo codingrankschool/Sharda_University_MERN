@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document Object Model</title>
+</head>
+<body>
+
+    <h1 class="heading-one">Hello HTML</h1>
+    <h1 id="special">hello from heading one</h1>
+
+
+    <hr>
+
+
+    <input type="text" value="Rakesh">
+
+
+    <div id="container">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+        // console.log("Hello Javascript")
+        // console.log(document)
+        // console.log(document.head)
+        // console.log(document.title)
+
+
+        // function hello(){
+        //     console.log("Hello from js fun")
+        // }
+
+        // hello()
+
+
+        //For Selecting html element we have following document object methods:
+
+
+        //1. getElementByTagName()
+
+        // var heading = document.getElementsByTagName('h1')
+        // console.log(heading[1])
+
+
+        //to change the content - 1. innerText, 2. textContext
+
+        // heading[0].innerText = "Hello From JS"
+        // heading[0].textContent = "Hello from Javascript"
+
+        // heading[1].innerText = "hello welcome ji"
+
+        // heading[1].style.backgroundColor = "red"
+        // heading[1].style.padding = "10px"
+        // heading[1].style.color = "white"
+
+
+        // //2. getElementByClassName()
+
+        // var headinOne = document.getElementsByClassName('heading-one')
+
+        // console.log(headinOne[0].innerText)
+
+
+        // //3. getElementById()
+
+        // var specialHeading = document.getElementById('special')
+
+        // console.log(specialHeading)
+
+
+        //Modern Method: 1. querySelector(), 2. querySelectorAll() 
+
+
+        // var firstHeading = document.querySelector("h1")
+        // console.log(firstHeading)
+        // firstHeading.innerText = "Hello"
+
+
+        // document.querySelector("#special").innerText = "Hello From Id"
+
+
+        // document.querySelector(".heading-one").innerText = "class"
+
+        // document.querySelector("h1+h1").innerText = "hello"
+
+        // var allHeadings = document.querySelectorAll("h1") // return array.
+
+        // console.log(allHeadings)
+
+
+
+        // var inputElement = document.querySelector("input[type='text']")
+
+        // console.log(inputElement)
+
+        // inputElement.type = "email"
+        // inputElement.value = "Simran"
+
+        // console.log(inputElement.value)
+
+
+
+        //
+
+        var container = document.getElementById("container")
+
+        container.style.backgroundColor = "teal"
+        container.style.width = "200px"
+        container.style.height = "200px"
+        container.style.margin = "10px"
+        container.style.color= "white"
+
+        // container.innerHTML = "<h1>Hello</h1>"
+
+        var headingElementOne = document.createElement('h1')
+
+
+        headingElementOne.innerText = "Specail Hello"
+
+
+        container.append(headingElementOne)
+
+        
+
+
+
+</script>

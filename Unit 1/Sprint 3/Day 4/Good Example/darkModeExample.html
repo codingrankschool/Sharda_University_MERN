@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dark Mode Example</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.3s;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    margin-bottom:20px;
+}
+
+button{
+    padding:12px 20px;
+    border:none;
+    background:#2196f3;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+/* Dark Theme */
+
+.dark{
+    background:black;
+    color:white;
+}
+
+</style>
+
+</head>
+<body class="dark">
+
+<div class="container">
+
+    <h1>Welcome to CodingRank School</h1>
+
+    <button id="themeBtn">
+        Toggle Theme
+    </button>
+
+</div>
+
+</body>
+</html>
+
+<script>
+
+    var body = document.querySelector('body')
+    
+    // var theme = 'light'
+
+    // document.getElementById('themeBtn').addEventListener('click', function(){
+    //     theme = theme == "light"?"dark":"light"
+    //    if(theme=='light'){
+    //      body.style.backgroundColor = "white"
+    //      body.style.color = "black"
+    //    }else{
+    //      body.style.backgroundColor = "black"
+    //      body.style.color = "white"
+    //    }
+    // })
+
+
+    // document.getElementById('themeBtn').addEventListener('click', function(){
+    //     body.classList.toggle('dark')
+    // })
+
+
+
+
+</script>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CodingRank Store</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    min-height:100vh;
+    padding:40px;
+}
+
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#2196f3;
+}
+
+.cart{
+    background:#2196f3;
+    color:white;
+    padding:10px 20px;
+    border-radius:30px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.cart span{
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:white;
+    color:#2196f3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Products */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.product-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+}
+
+.product-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    margin-bottom:10px;
+    color:#333;
+}
+
+.product-info p{
+    color:#666;
+    margin-bottom:15px;
+    line-height:1.5;
+}
+
+.price{
+    font-size:24px;
+    font-weight:bold;
+    color:#2196f3;
+    margin-bottom:15px;
+}
+
+.add-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#2196f3;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.add-btn:hover{
+    background:#1976d2;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+
+<div class="header">
+
+    <div class="logo">
+        🛒 CodingRank Store
+    </div>
+
+    <div class="cart">
+        Cart
+        <span id="cartCount">0</span>
+    </div>
+
+</div>
+
+<!-- Products -->
+
+<div class="products">
+
+    <!-- Product 1 -->
+
+    <div class="product-card">
+
+        <img src="https://picsum.photos/400/300?random=1">
+
+        <div class="product-info">
+
+            <h3>iPhone 16 Pro</h3>
+
+            <p>
+                Latest Apple smartphone with
+                powerful performance and camera.
+            </p>
+
+            <div class="price">
+                ₹89,999
+            </div>
+
+            <button class="add-btn">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Product 2 -->
+
+    <div class="product-card">
+
+        <img src="https://picsum.photos/400/300?random=2">
+
+        <div class="product-info">
+
+            <h3>Samsung S25 Ultra</h3>
+
+            <p>
+                Premium Android flagship with
+                AI-powered features.
+            </p>
+
+            <div class="price">
+                ₹79,999
+            </div>
+
+            <button class="add-btn">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Product 3 -->
+
+    <div class="product-card">
+
+        <img src="https://picsum.photos/400/300?random=3">
+
+        <div class="product-info">
+
+            <h3>OnePlus 14</h3>
+
+            <p>
+                Fast performance smartphone
+                with flagship specifications.
+            </p>
+
+            <div class="price">
+                ₹64,999
+            </div>
+
+            <button class="add-btn">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Product 4 -->
+
+    <div class="product-card">
+
+        <img src="https://picsum.photos/400/300?random=4">
+
+        <div class="product-info">
+
+            <h3>MacBook Air M4</h3>
+
+            <p>
+                Lightweight laptop with
+                excellent battery backup.
+            </p>
+
+            <div class="price">
+                ₹1,09,999
+            </div>
+
+            <button class="add-btn">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+
+    var allBtn = document.querySelectorAll('.add-btn')
+    console.log(allBtn)
+
+    for(var btn of allBtn){
+        btn.addEventListener('click', function(){
+            // console.log(event.target.innerText)
+
+            //console.log(event.target.parentElement.querySelector('h3').innerText)
+
+            var productName = event.target.parentElement.querySelector('h3').innerText
+
+            console.log(productName, "Has added to cart")
+        })
+    }
+
+</script>

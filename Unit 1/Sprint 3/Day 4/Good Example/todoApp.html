@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+.container{
+    width:600px;
+    margin:50px auto;
+}
+
+input{
+    width:100%;
+    padding:12px;
+}
+
+button{
+    padding:12px;
+}
+
+.task{
+    display:flex;
+    justify-content:space-between;
+    background:#f4f4f4;
+    padding:15px;
+    margin-top:10px;
+}
+
+#taskContainer>p{
+
+    background-color: red;
+    color: white;
+    padding: 10px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <input
+        id="task">
+
+    <button
+        id="addBtn">
+
+        Add Task
+
+    </button>
+
+    <div id="taskContainer">
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+
+
+    var taskContainer = document.getElementById('taskContainer')
+
+    document.getElementById('addBtn').addEventListener('click', function(){
+
+        var task = document.getElementById('task').value
+
+        var paraElement = document.createElement('p')
+
+        paraElement.innerText = task
+
+        taskContainer.append(paraElement)
+
+    })
+
+</script>

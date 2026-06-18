@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Example</title>
+</head>
+<body>
+
+    <!-- <button ondblclick="dblClickFun()" onclick="clickFunction()">Click</button> -->
+     <button>Click</button>
+    
+</body>
+</html>
+
+<script>
+
+    var body = document.querySelector('body')
+
+
+    // function clickFunction(){
+    //     body.style.backgroundColor = "teal"
+    // }
+
+    // function dblClickFun(){
+    //      body.style.backgroundColor = "red"
+    // }
+
+
+    var btn =  document.querySelector('button')
+
+    btn.addEventListener('click', function(){
+        body.style.backgroundColor = "teal"
+    })
+
+     btn.addEventListener('dblclick', function(){
+        body.style.backgroundColor = "red"
+    })
+
+
+
+</script>

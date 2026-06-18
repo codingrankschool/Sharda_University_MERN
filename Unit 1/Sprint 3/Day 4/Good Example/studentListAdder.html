@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Management</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    width:500px;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h2{
+    margin-bottom:20px;
+}
+
+.input-group{
+    display:flex;
+    gap:10px;
+}
+
+input{
+    flex:1;
+    padding:10px;
+    font-size:16px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    background:#2196f3;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+ul{
+    margin-top:20px;
+}
+
+li{
+    padding:10px;
+    margin-bottom:10px;
+    background:#e3f2fd;
+    border-radius:5px;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Student Management System</h2>
+
+    <div class="input-group">
+
+        <input
+            type="text"
+            id="studentName"
+            placeholder="Enter Student Name"
+        >
+
+        <button id="addBtn">
+            Add Student
+        </button>
+
+    </div>
+
+    <ul id="studentList">
+
+    </ul>
+
+</div>
+
+</body>
+</html>
+
+<script>
+
+    var studentList = document.getElementById('studentList')
+
+    document.getElementById('addBtn').addEventListener('click', function(){
+
+        var studentName = document.getElementById('studentName').value
+
+        var listItemForStudentName = document.createElement('li')
+
+        listItemForStudentName.innerText = studentName
+
+
+        studentList.append(listItemForStudentName)
+
+    })
+
+
+</script>

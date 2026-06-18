@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Employee Management System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+    padding:30px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.heading h1{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.heading p{
+    color:#666;
+}
+
+/* FORM */
+
+.form-container{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom:30px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+}
+
+label{
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#333;
+}
+
+input,
+select{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.skills{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:5px;
+}
+
+.skills label{
+    font-weight:normal;
+}
+
+.gender{
+    display:flex;
+    gap:20px;
+    margin-top:5px;
+}
+
+.gender label{
+    font-weight:normal;
+}
+
+.register-btn{
+    margin-top:25px;
+    width:100%;
+    padding:14px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.register-btn:hover{
+    background:#1d4ed8;
+}
+
+/* TABLE */
+
+.table-container{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.table-header{
+    background:#2563eb;
+    color:white;
+    padding:18px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#eff6ff;
+    color:#1e3a8a;
+}
+
+th,
+td{
+    padding:15px;
+    text-align:left;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f9fafb;
+}
+
+.action-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.edit-btn{
+    background:#10b981;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.delete-btn{
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.edit-btn:hover{
+    background:#059669;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+/* MOBILE CARDS */
+
+#employeeCards{
+    display:none;
+    padding:20px;
+}
+
+.employee-card{
+    background:#ffffff;
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.employee-card h3{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.employee-card p{
+    margin-bottom:8px;
+    color:#444;
+}
+
+.card-actions{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .skills{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .gender{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .table-wrapper{
+        display:none;
+    }
+
+    #employeeCards{
+        display:block;
+    }
+
+    .card-actions{
+        flex-direction:column;
+    }
+
+    .edit-btn,
+    .delete-btn{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="heading">
+
+        <h1>Employee Management System</h1>
+
+        <p>
+            Register employees and manage records using JavaScript DOM
+        </p>
+
+    </div>
+
+<!-- FORM -->
+
+<div class="form-container">
+
+    <form id="employeeForm">
+
+        <div class="form-grid">
+
+            <div class="input-group">
+                <label>Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter Employee Name">
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter Email">
+            </div>
+
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input
+                    type="number"
+                    id="mobile"
+                    placeholder="Enter Mobile Number">
+            </div>
+
+            <div class="input-group">
+                <label>Country</label>
+                <select id="country">
+                    <option value="">Select Country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>Canada</option>
+                    <option>Germany</option>
+                    <option>Australia</option>
+                </select>
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="input-group">
+
+            <label>Skills</label>
+
+            <div class="skills">
+
+                <label>
+                    <input type="checkbox" value="Java">
+                    Java
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Spring Boot">
+                    Spring Boot
+                </label>
+
+                <label>
+                    <input type="checkbox" value="React">
+                    React
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Node.js">
+                    Node.js
+                </label>
+
+                <label>
+                    <input type="checkbox" value="AWS">
+                    AWS
+                </label>
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div class="input-group">
+
+            <label>Gender</label>
+
+            <div class="gender">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="Male">
+                    Male
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="Female">
+                    Female
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="Other">
+                    Other
+                </label>
+
+            </div>
+
+        </div>
+
+        <button
+            type="submit"
+            class="register-btn">
+
+            Register Employee
+
+        </button>
+
+    </form>
+
+</div>
+
+<!-- EMPLOYEE RECORDS -->
+
+<div class="table-container">
+
+    <div class="table-header">
+        Employee Records
+    </div>
+
+    <!-- Desktop / Tablet Table -->
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>Country</th>
+                    <th>Gender</th>
+                    <th>Skills</th>
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="employeeTableBody">
+
+                <!-- <tr>
+
+                    <td>Rahul Sharma</td>
+                    <td>rahul@gmail.com</td>
+                    <td>9876543210</td>
+                    <td>India</td>
+                    <td>Male</td>
+                    <td>Java, Spring Boot</td>
+
+                    <td>
+
+                        <div class="action-buttons">
+
+                            <button class="edit-btn">
+                                Edit
+                            </button>
+
+                            <button class="delete-btn">
+                                Delete
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr> -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Mobile Cards -->
+
+    <div id="employeeCards">
+
+        <div class="employee-card">
+
+            <h3>Rahul Sharma</h3>
+
+            <p><strong>Email:</strong> rahul@gmail.com</p>
+
+            <p><strong>Mobile:</strong> 9876543210</p>
+
+            <p><strong>Country:</strong> India</p>
+
+            <p><strong>Gender:</strong> Male</p>
+
+            <p><strong>Skills:</strong> Java, Spring Boot</p>
+
+            <div class="card-actions">
+
+                <button class="edit-btn">
+                    Edit
+                </button>
+
+                <button class="delete-btn">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+
+    var form = document.getElementById('employeeForm')
+
+    var employeeContainer = document.getElementById('employeeTableBody')
+
+    var employees = []
+
+    form.addEventListener('submit', function(){
+        event.preventDefault()
+
+        var name = document.getElementById('name').value
+        var email = document.getElementById('email').value
+        var mobile = document.getElementById('mobile').value
+        var country = document.getElementById('country').value
+
+        //console.log(name, email, mobile, country)
+
+        var skillValues = document.querySelectorAll("input[type='checkbox']:checked")
+        console.log(skillValues)
+
+        var skills = []
+        for(var skill of skillValues){
+            skills.push(skill.value)
+        }
+
+        var gender = document.querySelector("input[name='gender']:checked").value
+
+        var employee = {
+            employeeName:name,
+            employeeEmail: email,
+            employeeMobile: mobile,
+            employeeCountry:country,
+            employeeSkills: skills, 
+            employeeGender: gender
+        }
+
+        employees.push(employee)
+
+        console.log(employees)
+
+
+        displayEmployee(employees)
+        
+
+    })
+
+    function displayEmployee(allEmployees){
+
+        employeeContainer.innerText = ""
+        allEmployees.forEach(function(employee, index){
+
+            var row = document.createElement('tr')
+
+            var name = document.createElement('td')
+            name.innerText = employee.employeeName
+
+            var email = document.createElement('td')
+            email.innerText = employee.employeeEmail
+
+            var mobile = document.createElement('td')
+            mobile.innerText = employee.employeeMobile
+
+            var country = document.createElement('td')
+            country.innerText = employee.employeeCountry
+
+            var skills = document.createElement('td')
+            skills.innerText = employee.employeeSkills.join(",")
+
+            var gender = document.createElement('td')
+            gender.innerText = employee.employeeGender
+
+            var actions = document.createElement('td')
+            var div = document.createElement('div')
+            div.setAttribute('class', 'action-buttons')
+
+            var editButton = document.createElement('button')
+            editButton.innerText = "Edit"
+            editButton.setAttribute('class', 'edit-btn')
+            editButton.addEventListener('click', function(){
+                updateEmployee(index)
+            })
+
+            var deleteButton = document.createElement('button')
+            deleteButton.innerText = "Delete"
+            deleteButton.setAttribute('class', 'delete-btn')
+            deleteButton.addEventListener('click', function(){
+                deleteEmployee(index)
+            })
+
+            div.append(editButton, deleteButton)
+
+            actions.append(div)
+
+            row.append(name, email, mobile, country, skills, gender, actions)
+
+            employeeContainer.append(row)
+
+
+        })
+
+    }
+
+    function deleteEmployee(index){
+        employees.splice(index, 1)
+        displayEmployee(employees)
+    }
+
+    function updateEmployee(index){
+        var employeeToUpdate = employees[index]
+        form.name.value = employeeToUpdate.employeeName
+        form.email.value = employeeToUpdate.employeeEmail
+        form.mobile.value = employeeToUpdate.employeeMobile
+        form.country.value = employeeToUpdate.employeeCountry
+    }
+
+</script>

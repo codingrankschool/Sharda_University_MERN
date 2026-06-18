@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f4f4;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    font-size:70px;
+    color:#2196f3;
+}
+
+button{
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+.increment{
+    background:green;
+}
+
+.decrement{
+    background:red;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 id="count">0</h1>
+
+    <button
+        class="increment"
+        id="incrementBtn">
+
+        Increment
+
+    </button>
+
+    <button
+        class="decrement"
+        id="decrementBtn">
+
+        Decrement
+
+    </button>
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+
+    var incrmeentBtn = document.getElementById('incrementBtn')
+
+    var decrementBtn = document.getElementById('decrementBtn')
+
+    var countDisplay = document.getElementById('count')
+
+
+    var count = 0;
+
+    incrmeentBtn.addEventListener('click', function(){
+        count++
+        countDisplay.innerText = count  
+    })
+
+    decrementBtn.addEventListener('click', function(){
+
+        if(count>0){
+            count--
+            countDisplay.innerText = count
+        }
+        
+    })
+
+</script>
