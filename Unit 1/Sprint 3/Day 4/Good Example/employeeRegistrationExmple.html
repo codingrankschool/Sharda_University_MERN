@@ -607,7 +607,7 @@ tr:hover{
 
             actions.append(div)
 
-            row.append(name, email, mobile, country, skills, gender, actions)
+            row.append(name, email, mobile, country, gender, skills, actions)
 
             employeeContainer.append(row)
 
@@ -623,10 +623,31 @@ tr:hover{
 
     function updateEmployee(index){
         var employeeToUpdate = employees[index]
-        form.name.value = employeeToUpdate.employeeName
-        form.email.value = employeeToUpdate.employeeEmail
-        form.mobile.value = employeeToUpdate.employeeMobile
-        form.country.value = employeeToUpdate.employeeCountry
+        document.getElementById('name').value = employeeToUpdate.employeeName
+        document.getElementById('email').value = employeeToUpdate.employeeEmail
+        document.getElementById('mobile').value = employeeToUpdate.employeeMobile
+        
+        document.getElementById('country').value = employeeToUpdate.employeeCountry
+
+
+        //console.log(employeeToUpdate.employeeSkills)
+
+       employeeToUpdate.employeeSkills.forEach(function(skillName){
+        console.log(skillName)
+
+       document
+        .querySelector(
+            `input[type='checkbox'][value='${skillName}']`
+        )
+        .checked = true
+
+       })
+
+       document.querySelector(
+        `input[name='gender'][value='${employeeToUpdate.employeeGender}']`
+        ).checked = true
+
+
     }
 
 </script>

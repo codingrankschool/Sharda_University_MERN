@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+        *{
+            margin: 0;
+            padding: 0;
+             box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        #student-form{
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            padding: 10px;
+            margin:10px auto;
+            width: 40%;
+        }
+        #student-regisration{
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+        }
+
+        #student-regisration>input{
+            padding: 10px;
+            
+        }
+
+        #student-container{
+            margin: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: minmax(auto, auto);
+            gap: 10px;
+        }
+
+        #student-container>div{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .button-box{
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            gap: 5px;
+            
+        }
+        .button-box>button{
+            width: 60px;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            transition: all .1s ease;
+            cursor: pointer;
+        }
+
+        .button-box>button:first-child{
+            background-color: rgb(34, 57, 0);
+        }
+        .button-box>button:last-child{
+            background-color: red;
+        }
+
+
+        .button-box>button:hover{
+            background-color: yellow;
+            color: black;
+        }
+
+
+
+        @media all and (max-width:700px) {
+
+            #student-form{
+            margin:10px auto;
+            width: 100%;
+        }
+            
+        }
+
+        #heading{
+            text-align: center;
+            margin: 10px;
+            border-bottom: 2px solid red;
+            display: inline;
+        }
+
+        #student-heading{
+            margin: 10px;
+            border-bottom: 2px solid red;
+            display: inline;
+        }
+
+
+
+    </style>
+
+</head>
+<body> 
+
+    
+    <div id="student-form">
+        <h2 id="heading">Student Register Form</h2>
+        <form id="student-regisration">
+
+            <input name="name" id="name" type="text" placeholder="Enter Name">
+            <input name="email" id="email" type="email" placeholder="Enter Email">
+            <input name="password" id="password" type="password" placeholder="Enter Password">
+            
+            <input type="submit" value="Register">
+
+        </form>
+    </div>
+
+    <hr>
+
+    <h2 id="student-heading">Student Details</h2>
+    <div id="student-container">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    var form = document.getElementById('student-regisration')
+
+    var studentContainer = document.getElementById('student-container')
+
+    var students = JSON.parse(localStorage.getItem('studentData')) || []
+
+    var editStudent = -1
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+
+        var name = form.name.value
+        var email = form.email.value
+        var password = form.password.value
+
+        if(!name || !email || !password){
+            alert("All fields are important to fill")
+            return
+        }
+
+        var student = {
+                name,
+                email,
+                password
+        }
+
+        if(editStudent!=-1){
+
+            students[editStudent] = student
+            editStudent = -1
+
+        }else{
+          students.push(student)   
+        }
+
+        form.reset()
+
+        localStorage.setItem('studentData', JSON.stringify(students))
+        displayStudent(students)
+
+    })
+
+
+    function displayStudent(students){
+
+        studentContainer.innerText = ""
+        students.forEach(function(student, index){
+
+            var box = document.createElement('div')
+
+            var studentName = document.createElement('h2')
+            studentName.innerText = student.name
+
+            var studentEmail = document.createElement('p')
+            studentEmail.innerText = "Email: "+student.email
+
+            var studentPassword = document.createElement('p')
+            studentPassword.innerText = "Password: "+student.password
+
+
+            var buttonBox = document.createElement('div')
+            buttonBox.setAttribute('class', 'button-box')
+
+            var editButton = document.createElement('button')
+            editButton.innerText = "Edit"
+            editButton.addEventListener('click', function(){
+                updateStudent(index)
+            })
+
+            var deleteButton = document.createElement('button')
+            deleteButton.innerText = "Delete"
+            deleteButton.addEventListener('click', function(){
+                deleteStudent(index)
+            })
+
+            buttonBox.append(editButton, deleteButton)
+
+
+
+            box.append(studentName, studentEmail, studentPassword, buttonBox)
+
+            studentContainer.append(box)
+
+        })
+
+    }
+
+
+    function deleteStudent(index){
+        students.splice(index, 1)
+        displayStudent(students)
+
+        localStorage.setItem('studentData', JSON.stringify(students))
+    }
+
+    function updateStudent(index){
+
+        editStudent = index
+
+        var student = students[index]
+
+        form.name.value = student.name
+        form.email.value = student.email
+        form.password.value = student.password
+
+    }
+
+    displayStudent(students)
+
+
+
+</script>
