@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Promises</title>
+
+
+    <style>
+
+        #student-container{
+            display: flex;
+            flex-direction: column;
+        }
+
+        p{
+            padding: 10px;
+            background-color: red;
+            color: white;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h2 id="loader"></h2>
+
+    <div id="student-container">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+
+//Promises: they are object in javascript, which are used to handle the asynchronous behavior of javascript
+
+// let promise = new Promise(function(resolve, reject){
+//           reject("Resolved")
+// })
+
+// console.log(promise)
+
+
+// console.log("Task 1")
+
+// console.log("Task 2")
+
+// let promise = new Promise(function(resolve, reject){
+//     setTimeout(function(){
+//         reject("Resolved")
+//     }, 2000)
+// })
+
+// promise.then(function(data){
+//     console.log(data)
+// }).catch(function(error){
+//     console.log("Rejected: ",error)
+// })
+
+// console.log("Task 3")
+
+
+//To get proper msg from promise it is required to consume the promise.
+
+//1. .then().catch()
+//2. async and await
+
+
+//Good Example:
+
+let loadingHeading = document.getElementById('loader')
+let studentContainer = document.getElementById('student-container')
+
+function fetchStudentData(){
+    loading(true)
+    return new Promise(function(resolve, reject){
+        setTimeout(function(){
+            loading(false)
+            let data = [{name:"Rakesh"}, {name:"Rajni"}, {name:"Rohit"}]
+
+            reject(data)
+
+        }, 5000)
+    })
+}
+
+
+// fetchStudentData().then(function(data){
+//     console.log("Student data:", data)
+//     return data.map(function(name){
+//         let obj = name
+//         obj.name = obj.name.toUpperCase()
+//         return obj
+        
+//     })
+// }).then(function(data){
+//     console.log(data)
+//     displayStudent(data)
+// })
+// .catch(function(error){
+//     console.log("Rejected", error)
+// })
+
+
+//async & await
+
+
+async function getData(){
+    try {
+        let data = await fetchStudentData()
+       displayStudent(data)
+    } catch (error) {
+        console.log("Rejected")
+    }
+}
+
+getData()
+
+
+function loading(status){
+    loadingHeading.innerText = status?"Loading":"Loaded Data"
+}
+
+
+function displayStudent(students){
+    students.forEach(function(student, index){
+        let para = document.createElement('p')
+        para.innerText = student.name
+
+        studentContainer.append(para)
+    })
+}
+
+
+
+
+</script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        #student-form{
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 500px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        input{
+            padding: 10px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <form id="student-form">
+
+        <input type="text" name="name" placeholder="Enter Name">
+        <input type="number" name="age" placeholder="Enter Age">
+        <input type="text" name="address" placeholder="Enter Address">
+
+        <input type="submit" value="Register">
+
+    </form>
+    
+</body>
+</html>
+
+
+<script>
+
+    // var form = document.getElementById('student-form')
+
+
+    // function Student(name, age, address){
+    //     this.name = name
+    //     this.age = age
+    //     this.address = address
+    // }
+
+    // form.addEventListener('submit', function(){
+    //     event.preventDefault()
+
+    //     let name = form.name.value
+    //     let age = form.age.value
+    //     let address = form.address.value
+
+    //     let student = new Student(name, age, address)
+
+    //     console.log(student)
+        
+    // })
+
+
+    function Student(name, age, address){
+
+    this.name = name
+    this.age = age 
+    this.address = address
+
+}
+
+
+Student.prototype.displayDetails = function(){
+    console.log("Hello from Student Constructor Function")
+}
+
+
+let student1 = new Student("Rakesh", 23, "Noida")
+console.log(student1)
+
+let student2 = new Student("Simran", 19, "Delhi")
+console.log(student2)
+
+</script>
