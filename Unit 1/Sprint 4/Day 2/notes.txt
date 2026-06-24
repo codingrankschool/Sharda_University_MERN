@@ -1,0 +1,14 @@
+Till Now: 
+0. HTML, and CSS
+1. Covered Core Javascript with DOM
+2. Advance Javascript
+    2.1 let/const
+    2.2 hoisting
+    2.3 various scope
+    2.4 global execution context
+    2.5 closures
+    2.6 constructor function, and prototype
+    2.7 asychronous programming, setTimeout, and other methods
+    2.8 callbacks, and callback hell
+    2.9 promises, .then() .catch(), and async, await
+    2.10 fetch api

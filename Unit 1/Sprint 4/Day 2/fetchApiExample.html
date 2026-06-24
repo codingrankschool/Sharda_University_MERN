@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+</head>
+<body>
+
+    <h2>Fetch API Example</h2>
+    <hr>
+    
+</body>
+</html>
+
+<script>
+
+// let data = fetch("https://jsonplaceholder.typicode.com/posts")
+
+
+// data.then(function(data){
+//     return data.json()
+// })
+// .then(function(data){
+//     console.log(data)
+// })
+// .catch(function(error){
+//     console.log(error)
+// })
+
+
+// async function getPost(){
+//     let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+//         "method":"POST",
+//         "content-type":"application/json",
+//         "body":{}
+//     })
+
+//     let data = await response.json()
+
+//     console.log(data)
+
+// }
+
+// getPost()
+
+
+//API - http://api.openweathermap.org/geo/1.0/direct?q={city name}&limit={limit}&appid={API key}
+
+
+//http://api.openweathermap.org/geo/1.0/direct?q=Noida&limit=10&appid=d1db5f884282b1f826a4760ea6be28e6
+
+
+async function fetchWeather(city){
+    let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=10&appid=d1db5f884282b1f826a4760ea6be28e6`)
+
+    let data = await response.json();
+    console.log(data)
+}
+
+fetchWeather("Noida")
+
+</script>

@@ -1,0 +1,14 @@
+#navbar{
+    margin: 10px;
+}
+
+#navbar>nav{
+    display: flex;
+    gap: 30px;
+    font-size: 30px;
+}
+
+nav>a{
+    text-decoration: none;
+    cursor: pointer;
+}
