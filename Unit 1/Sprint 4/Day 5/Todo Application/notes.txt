@@ -1,0 +1,8 @@
+MongoDB - NoSQL database management system
+|
+|----mongoose
+|
+Node(Express) appliation
+
+
+Document --- Model
