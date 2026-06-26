@@ -25,6 +25,7 @@ const todoController = {
         try{
             // const todos = todoDBOperations.getAll();
             const todos = await Todo.find();
+            console.log(todos)
             return res.status(200).json({status: 'success', message: 'Todos retrieved successfully', data: todos});
         }
         catch(err){
